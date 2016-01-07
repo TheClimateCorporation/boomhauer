@@ -15,9 +15,9 @@ Boomhauer is a library to simplify writing [AWS Lambda](https://aws.amazon.com/l
 
 ## Acknowledgments
 
-Shoutouts to [Mario Aquino](https://github.com/marioaquino), [Jeff Melching](https://github.com/jmelching), Tim Palmer,
-[Robert Grailer](https://github.com/RobertGrailer), and [Eric Turcotte](https://github.com/ericturcotte) for being major
-contributors to this project.
+Shoutouts to [Mario Aquino](https://github.com/marioaquino), [Jeff Melching](https://github.com/jmelching),
+[Tim Palmer](https://github.com/palmertimj), [Robert Grailer](https://github.com/RobertGrailer), and
+[Eric Turcotte](https://github.com/ericturcotte) for being major contributors to this project.
 
 ## License
 
