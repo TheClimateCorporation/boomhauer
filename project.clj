@@ -23,9 +23,8 @@
                  [org.slf4j/slf4j-api "1.7.13"]
                  [org.slf4j/slf4j-log4j12 "1.7.13"]
                  [log4j "1.2.17"]
-                 [org.apache.commons/commons-lang3 "3.3.2"]
-                 [commons-io/commons-io "2.4"]
-                 [info.debatty/java-string-similarity "0.12"]]
+                 [org.apache.commons/commons-lang3 "3.4"]
+                 [commons-io/commons-io "2.4"]]
 
   :aot [com.climate.boomhauer.speechlet
         com.climate.boomhauer.speechlet-request-handler])
