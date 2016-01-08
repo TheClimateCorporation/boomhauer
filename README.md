@@ -12,7 +12,7 @@ Boomhauer is a library to simplify writing [AWS Lambda](https://aws.amazon.com/l
 ## Latest version
 
 [![Clojars Project](http://clojars.org/com.climate/boomhauer/latest-version.svg )](http://clojars.org/com.climate/boomhauer)
-[![Dependencies Status](http://jarkeeper.com/TheClimateCorporation/boomhauer/status.svg)](http://jarkeeper.com/TheClimateCorporation/boomhauer)
+[![Dependencies Status](https://jarkeeper.com/TheClimateCorporation/boomhauer/status.svg)](https://jarkeeper.com/TheClimateCorporation/boomhauer)
 [![Build Status](https://travis-ci.org/TheClimateCorporation/boomhauer.svg?branch=master)](https://travis-ci.org/TheClimateCorporation/boomhauer)
 
 ## Acknowledgments
