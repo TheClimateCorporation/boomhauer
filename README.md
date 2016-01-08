@@ -1,9 +1,10 @@
 # Boomhauer
 
 _Jeffrey Dexter Boomhauer III, most commonly referred to as Boomhauer, is a fictional character in the animated series
-King of the Hill._
+King of the Hill.  He is known for his nearly incomprehensible speech._
 
 ![Boomhauer](https://upload.wikimedia.org/wikipedia/en/b/be/Jeff_Boomhauer.png)
+[![Boomhauer](http://img.youtube.com/vi/bIaUfBjHjpI/0.jpg)](https://www.youtube.com/watch?v=bIaUfBjHjpI "Boomhauer calls 911")
 
 Boomhauer is a library to simplify writing [AWS Lambda](https://aws.amazon.com/lambda/) functions in
 [Clojure](http://clojure.org/) to handle [Alexa](https://developer.amazon.com/public/solutions/alexa) voice requests.
