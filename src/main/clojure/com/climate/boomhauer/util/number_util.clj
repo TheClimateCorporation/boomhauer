@@ -1,11 +1,13 @@
-(ns com.climate.boomhauer.util.number-util)
+(ns com.climate.boomhauer.util.number-util
+  (:require [clojure.string :as string]))
 
 (defn number->speech
   [number]
-  (if number
-    (let [number (Double/parseDouble (str number))]
-      (if (= number (double (int number)))
-        (int number)
-        number))
-    nil
-    ))
+  (let [number-string (str number)]
+    (when (not (string/blank? number-string))
+      (try
+        (let [number (Double/parseDouble number-string)]
+          (if (= number (double (int number)))
+            (int number)
+            number))
+        (catch IllegalArgumentException _ nil)))))
