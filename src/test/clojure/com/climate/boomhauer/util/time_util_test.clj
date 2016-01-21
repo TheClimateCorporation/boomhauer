@@ -46,3 +46,12 @@
           start (.withTime (.withZone (DateTime.) zone) 2 13 0 0)
           end (.withTime (.withZone (DateTime.) zone) 14 13 0 0)]
       (is (= "from 2 13 AM to 2 13 PM" (time-util/time-span->speech start end zone))))))
+
+(deftest past?
+  (testing "in the past"
+    (let [in-the-past (.minusMinutes (DateTime.) 1)]
+      (is (not (nil? (time-util/past? in-the-past))))))
+  (testing "in the future"
+    (let [in-the-future (.plusMinutes (DateTime.) 1)]
+      (is (not (time-util/past? in-the-future)))))
+  )

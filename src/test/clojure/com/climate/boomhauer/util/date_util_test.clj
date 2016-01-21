@@ -32,16 +32,17 @@
     (let [tomorrow (.plusDays (DateTime/now) 1)]
       (is (= "tomorrow" (du/date-time->speech tomorrow)))))
   (testing "other date in current year returns 'on day-of-week month day-of-month'"
-    (let [now (DateTime/now)
+    (let [midnight-date-time (.withTime (.withZone (DateTime.) (DateTimeZone/UTC)) 0 0 0 0)
           ; jan 1st is convenient but avoid issues in jan or dec by using apr
-          [month month-name] (if (#{1 12} (.getMonthOfYear now))
+          [month month-name] (if (#{1 12} (.getMonthOfYear midnight-date-time))
                                [4 "April"]
                                [1 "January"])
-          other-day-in-current-year (.withDate (DateTime.) (.getYear now) month 1)
+          other-day-in-current-year (.withDate midnight-date-time (.getYear midnight-date-time) month 1)
           day-of-week (.print ^DateTimeFormatter (DateTimeFormat/forPattern "EEEE") other-day-in-current-year)
           expected-speech (str "on " day-of-week " " month-name " 1st")]
       (is (= expected-speech (du/date-time->speech other-day-in-current-year)))))
   (testing "other date in different year returns 'on day-of-week month day-of-month year'"
-    (let [other-day-in-different-year (.withDate (DateTime.) 1980 4 30)
+    (let [midnight-date-time (.withTime (.withZone (DateTime.) (DateTimeZone/UTC)) 0 0 0 0)
+          other-day-in-different-year (.withDate midnight-date-time 1980 4 30)
           expected-speech "on Wednesday April 30th, 1980"]
       (is (= expected-speech (du/date-time->speech other-day-in-different-year))))))
