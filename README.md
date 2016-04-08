@@ -15,6 +15,48 @@ Boomhauer is a library to simplify writing [AWS Lambda](https://aws.amazon.com/l
 [![Dependencies Status](https://jarkeeper.com/TheClimateCorporation/boomhauer/status.svg)](https://jarkeeper.com/TheClimateCorporation/boomhauer)
 [![Build Status](https://travis-ci.org/TheClimateCorporation/boomhauer.svg?branch=master)](https://travis-ci.org/TheClimateCorporation/boomhauer)
 
+## Usage
+
+Boomhauer makes registering `intents` and their handlers pretty easy.
+Create a request handler that looks similar to the below code example:
+
+```clojure
+(ns your.speechlet-request-handler
+  (:gen-class
+    :name your.SpeechletRequestHandler
+    :extends com.amazon.speech.speechlet.lambda.SpeechletRequestStreamHandler
+    :init init
+    :constructors {[] [com.amazon.speech.speechlet.Speechlet java.util.Set]})
+
+  (:use [your.custom-intent])
+
+  (:import [com.climate.boomhauer BoomhauerSpeechlet]))
+
+(defn -init []
+  [[(BoomhauerSpeechlet.
+      {:launch-message "Intro message when skill launches"
+       :card-title "Your Skill"}), #{}] nil])
+```
+
+Then, create an intent for your skill (that looks something like the
+code below):
+
+```clojure
+(ns your.intent
+  (:require [com.climate.boomhauer.intent-handler :refer [defintent]])
+  (:import [com.amazon.speech.speechlet SpeechletResponse]
+           [com.amazon.speech.ui PlainTextOutputSpeech]))
+
+(defn- mk-plain-speech [text]
+  (doto (PlainTextOutputSpeech.) (.setText text)))
+
+(defn hello-world [session session-map]
+  (let [speech (mk-plain-speech "Hello, world!")]
+    (SpeechletResponse/newTellResponse speech)))
+
+(defintent :HelloWorldIntent hello-world)
+```
+
 ## Acknowledgments
 
 Shoutouts to [Mario Aquino](https://github.com/marioaquino), [Jeff Melching](https://github.com/jmelching),
