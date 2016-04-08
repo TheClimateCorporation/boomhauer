@@ -1,4 +1,4 @@
-(defproject com.climate/boomhauer "0.1.0"
+(defproject com.climate/boomhauer "0.1.1"
   :description "Library for writing AWS Lambda functions in Clojure to handle Alexa voice requests"
   :url "https://github.com/TheClimateCorporation/boomhauer"
   :min-lein-version "2.0.0"
@@ -14,8 +14,8 @@
   :dependencies [[org.clojure/data.json "0.2.6"]
                  [com.amazonaws/aws-lambda-java-core "1.1.0"]
                  [com.amazonaws/aws-lambda-java-events "1.1.0"]
-                 [com.amazon.alexa/alexa-skills-kit "1.1.1"]
-                 [org.clojure/clojure "1.7.0"]
+                 [com.amazon.alexa/alexa-skills-kit "1.1.3"]
+                 [org.clojure/clojure "1.8.0"]
                  [clj-http "2.0.0"]
                  [cheshire "5.5.0"]
                  [clj-time "0.11.0"]
